@@ -2,9 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Set up env') {
             steps {
-                echo 'Hello World'
+                python -m pip install --upgrade pip
+                pip install -r requirement.txt
+            }
+        stage('test') {
+            steps {
+                pytest
             }
         }
     }
