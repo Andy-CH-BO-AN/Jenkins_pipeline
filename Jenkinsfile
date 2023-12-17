@@ -5,7 +5,6 @@ pipeline {
         stage('Set up env') {
             steps {
                 script {
-                    sh 'python -m pip install --upgrade pip'
                     sh 'pip install -r requirement.txt'
                 }
             }
