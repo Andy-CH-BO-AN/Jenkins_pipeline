@@ -4,12 +4,17 @@ pipeline {
     stages {
         stage('Set up env') {
             steps {
-                python -m pip install --upgrade pip
-                pip install -r requirement.txt
+                script {
+                    sh 'python -m pip install --upgrade pip'
+                    sh 'pip install -r requirement.txt'
+                }
             }
-        stage('test') {
+        }
+        stage('Test') {
             steps {
-                pytest
+                script {
+                    sh 'pytest'
+                }
             }
         }
     }
