@@ -13,6 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    sh 'which pytest'
                     sh 'pytest'
                 }
             }
