@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers {
+        githubPush()
+    }
 
     environment {
         ENV = credentials('pipeline')
@@ -22,3 +25,4 @@ pipeline {
         }
     }
 }
+
