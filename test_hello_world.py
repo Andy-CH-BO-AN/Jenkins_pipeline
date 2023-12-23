@@ -10,3 +10,5 @@ def test_hello_world():
         load_dotenv(env_file)
     else:
         load_dotenv()
+
+    logging.info(load_dotenv())
