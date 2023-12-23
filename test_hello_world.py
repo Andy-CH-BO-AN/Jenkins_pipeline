@@ -11,4 +11,6 @@ def test_hello_world():
     else:
         load_dotenv()
 
-    logging.info(load_dotenv())
+    email = os.environ.get('EMAIL')
+
+    logging.info(email)
