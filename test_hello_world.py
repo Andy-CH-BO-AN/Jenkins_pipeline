@@ -13,4 +13,4 @@ def test_hello_world():
 
     email = os.environ.get('EMAIL')
 
-    logging.info(email)
+    print(email)
