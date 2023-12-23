@@ -11,6 +11,6 @@ def test_hello_world():
     else:
         load_dotenv()
 
-    email = os.environ.get('EMAIL')
+    domain = os.environ.get('DOMAIN')
 
-    print(email)
+    print(domain)
