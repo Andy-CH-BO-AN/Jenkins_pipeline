@@ -1,6 +1,9 @@
 pipeline {
     agent any
 
+    environment {
+        ENV = credentials('.env')
+    }
     stages {
         stage('Set up env') {
             steps {
