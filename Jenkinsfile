@@ -1,7 +1,11 @@
 pipeline {
     agent any
     triggers {
-        githubPush()
+        githubPush(
+            branches: [
+                    'main'
+                ]
+        )
     }
 
     environment {
