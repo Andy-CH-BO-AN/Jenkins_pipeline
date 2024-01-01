@@ -14,3 +14,4 @@ def test_hello_world():
     domain = os.environ.get('DOMAIN')
 
     print(domain)
+    print(123)
