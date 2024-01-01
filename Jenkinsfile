@@ -6,23 +6,14 @@ pipeline {
     }
 
     triggers {
-        script {
-            def cronExpression = '0 5 * * 2,4'
-            def timeZone = 'Asia/Taipei'
-
-            if (params.enableCron) {
-                cron(cronExpression, false, timeZone)
-            }
-
-            if (params.enableGitHubPush) {
-                githubPush()
-            }
-        }
+        cron(spec: 'H H * * *', disabled: !params.enableCron)
+        githubPush(disabled: !params.enableGitHubPush)
     }
 
     environment {
         ENV = credentials('pipeline')
     }
+
     stages {
         stage('Set up env') {
             steps {
@@ -41,4 +32,3 @@ pipeline {
         }
     }
 }
-
