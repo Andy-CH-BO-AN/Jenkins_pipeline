@@ -2,7 +2,6 @@ pipeline {
     agent any
     triggers {
         githubPush()
-        cron('0 5 * * 2,4', false, 'Asia/Taipei')
     }
 
     environment {
