@@ -1,13 +1,8 @@
 pipeline {
     agent any
-    parameters {
-        booleanParam(name: 'enableCron', defaultValue: false, description: '啟用定時觸發器')
-        booleanParam(name: 'enableGitHubPush', defaultValue: true, description: '啟用 GitHub 推送觸發器')
-    }
-
     triggers {
-        cron(spec: 'H H * * *', enabled: params.enableCron) // 使用 enabled 取代 disabled
-        githubPush(branches: [[enabled: params.enableGitHubPush]]) // 使用 branches 設定 enabled
+        githubPush()
+        cron('0 5 * * 2,4', false, 'Asia/Taipei')
     }
 
     environment {
